@@ -1,7 +1,7 @@
 const pcap = require('pcap-parser');
 
 const pcapAnalyzer = {
-  analyze: (file_path) => {
+  analyze: (file_path, callback) => {
     const dangerous_patterns = ['attack', 'malware', 'exploit', 'virus'];
 
     const cap = pcap.parse(file_path);
@@ -25,13 +25,13 @@ const pcapAnalyzer = {
       } else {
         analysis_result += 'DANGER FOUND - CHECK THE PACKETS ABOVE';
       }
-      sendAnalysisResultToClient(analysis_result);
+      callback(null, analysis_result); //  null as error and analysis result
+    });
+
+    cap.on('error', (err) => {
+      callback(err); // error to callback
     });
   }
 };
-
-function sendAnalysisResultToClient(result) {
-    document.dispatchEvent(new CustomEvent('analysisResult', { detail: result }));
-}
 
 module.exports = pcapAnalyzer;
