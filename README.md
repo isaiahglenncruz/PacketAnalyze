@@ -46,3 +46,5 @@ To install the required dependencies outlined in ```package.json```.
 ```node server.js```
 
 will start the application on http://localhost:3000
+
+![captureproof](https://github.com/isaiahglenncruz/PacketAnalyze/assets/72627685/e41ad3f8-1633-48b3-97af-35812d5c6b6b)
