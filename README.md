@@ -33,7 +33,12 @@ Now, from the same directory, you may run the Python script by using:
 where ```file.pcapng``` is the name of the WireShark packet capture that you have 
 obtained.
 
-# PacketAnalyze Web Application
+# PacketAnalyze Web-Based Application
+
+### Tech Stack
+- Simple user interface using CSS.
+- Express for handling application middleware and routing. 
+- Multer for file uploads.
 
 ### Dependencies Required
 First, ensure that you have a version of Node.js installed on your system. Clone this 
